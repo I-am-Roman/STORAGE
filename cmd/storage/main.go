@@ -15,5 +15,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Hello, everyone", file)
+
+	restore, err := st.GetByID(file.ID)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//fmt.Println(st.files)
+
+	fmt.Println("Hello, everyone", restore)
 }
